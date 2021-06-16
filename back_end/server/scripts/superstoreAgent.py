@@ -57,7 +57,7 @@ def query_price(search):
     driver.quit()
 
 
-def get_prices(items):
+def get_super_prices(items):
   '''
   Prints out the price of items
   :param items: list of items to query

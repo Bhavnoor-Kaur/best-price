@@ -1,1 +1,1 @@
-{"superstore": null}
+{"superstore": [{"item": "pasta", "price": "$0.11"}, {"item": "grapes", "price": "$6.57"}, {"item": "apple", "price": "$4.37"}, {"item": "brown rice", "price": "$0.22"}, {"item": "chicken", "price": "$18.52"}, {"item": "milk", "price": "$0.12"}, {"item": "carrots", "price": "$0.33"}]}

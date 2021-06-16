@@ -6,7 +6,7 @@ function writeDataToJson(path, data) {
   fs.writeFileSync(path, JSON.stringify(data))
 }
 
-function execPython(script) {
+async function execPython(script) {
   /*
   Executes the given python script
   :param script: the script to execute
@@ -23,6 +23,7 @@ function execPython(script) {
   console.log(`child process close all stdio with code ${code}`);
   // send data to browser
   });
+  console.log("Process Ending")
 }
 
 function readJson(path) {
@@ -36,7 +37,7 @@ function readJson(path) {
   return result;
 }
 
-const handlePriceRequest = (itemsSend) => {
+const handlePriceRequest = async (itemsSend) => {
   /*
   Handle the calling of the python scripts
   :param itemsSend: list of items to query price
@@ -46,7 +47,7 @@ const handlePriceRequest = (itemsSend) => {
   // Return the json file with the list of prices
   data = {items: itemsSend};
   writeDataToJson('./server/scripts/data/query.json', data);
-  execPython('./server/scripts/testScript.py');
+  await execPython('./server/scripts/testScript.py');
   return readJson('./server/scripts/data/result.json')
 }
 

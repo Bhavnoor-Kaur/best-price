@@ -27,7 +27,7 @@ app.get('/aa', (req, res) => {
   fs.writeFileSync('./server/scripts/data/query.json', JSON.stringify(testData))
 
   // spawn new child process to call the python script
-  const python = spawn('python3', ['./server/script1.py']);
+  const python = spawn('python3', ['./server/scripts/testScript.py']);
   // collect data from script
   python.stdout.on('data', function (data) {
     console.log('Pipe data from python script ...');

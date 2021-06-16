@@ -1,5 +1,6 @@
 import json
-from superstoreAgent import get_prices
+from superstoreAgent import get_super_prices
+import os
 
 items = [
   'apple', 'brown rice', 'grapes', 'milk', 'carrots', 'chicken', 'pasta'
@@ -10,8 +11,9 @@ def check_superstore():
   Checks the price of items at superstore
   '''
   global items
-  print("****Superstore Prices***")
-  get_prices(items)
+  # print("****Superstore Prices***")
+  result = get_super_prices(items)
+  return result
 
 def load_items():
   '''
@@ -22,7 +24,7 @@ def load_items():
   global items
   # Read the json file
   try:
-    with open('./data/query.json') as infile:
+    with open('' + os.getcwd + '/server/scripts/data/query.json') as infile:
       data = json.load(infile)
       items = data['items']
   except Exception as e:
@@ -35,7 +37,7 @@ def dump_items(data):
   :returns None
   '''
   try:
-    with open('./data/result.json', 'w') as outfile:
+    with open('' + os.getcwd() + '/server/scripts/data/result.json', 'w') as outfile:
       json.dump(data, outfile)
   except Exception as e:
     print("[Exception]", e)
