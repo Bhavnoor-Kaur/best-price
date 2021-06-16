@@ -4,6 +4,7 @@ import os
 import time
 from threading import Thread
 
+result = []
 
 def make_url(search):
   '''
@@ -23,6 +24,7 @@ def make_url(search):
 
 
 def query_price(search):
+  global result
   # Get a valid url
   url = make_url(search)
 
@@ -46,7 +48,9 @@ def query_price(search):
     time.sleep(2)
     # Get the per pound price of the item
     item_list = driver.find_elements_by_css_selector('span.price__value.comparison-price-list__item__price__value')
-    print(search + ',' + item_list[0].text)
+    itemObj = {'item': search, 'price': item_list[0].text}
+    result.append(itemObj)
+    # print(search + ',' + item_list[0].text) TODO Can be used to print the price
   except Exception as e:
     print("[Exception]", e)
   finally:
@@ -57,8 +61,9 @@ def get_prices(items):
   '''
   Prints out the price of items
   :param items: list of items to query
-  :returns None
+  :returns result The list of prices
   '''
+  global result
   # Start individual threads to make queries
   list_threads = []
   for i in range(0, len(items)):
@@ -67,3 +72,4 @@ def get_prices(items):
     new_thread.start()
   for query_threads in list_threads:
     query_threads.join()
+  return result

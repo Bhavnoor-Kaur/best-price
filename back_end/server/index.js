@@ -57,11 +57,10 @@ app.post('/api_getPrices', (req, res) => {
   console.log(req.body)
   itemsData = req.body;
   result = handler.handlePriceRequest(itemsData);
-  
-
+  // Build the response for the client
   res.json({
     status: "success",
-    prices: ['a', 'b']
+    prices: result
   })
 })
 

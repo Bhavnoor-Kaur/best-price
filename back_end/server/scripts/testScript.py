@@ -28,8 +28,21 @@ def load_items():
   except Exception as e:
     print("[Exception]", e)
   
-
+def dump_items(data):
+  '''
+  Writes the data to the json file
+  :param data: The data to write file
+  :returns None
+  '''
+  try:
+    with open('./data/result.json', 'w') as outfile:
+      json.dump(data, outfile)
+  except Exception as e:
+    print("[Exception]", e)
 
 if __name__ == '__main__':
   load_items()
-  check_superstore()
+  resSuperstore = check_superstore()
+  result = {'superstore': resSuperstore}
+  dump_items(result)
+  

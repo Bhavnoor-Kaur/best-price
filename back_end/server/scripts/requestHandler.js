@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { spawn } = require("child_process");
 
 function writeDataToJson(path, data) {
   // Writes data to the given path
@@ -31,8 +32,8 @@ function readJson(path) {
   :return itemList: list of the items and prices
   */
   let rawData = fs.readFileSync(path);
-  let itemList = JSON.parse(rawData);
-  return itemList;
+  let result = JSON.parse(rawData);
+  return result;
 }
 
 const handlePriceRequest = (itemsSend) => {
@@ -48,3 +49,5 @@ const handlePriceRequest = (itemsSend) => {
   execPython('./server/scripts/testScript.py');
   return readJson('./server/scripts/data/result.json')
 }
+
+module.exports = { handlePriceRequest };
