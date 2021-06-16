@@ -2,30 +2,23 @@
 
 const express = require("express");
 const { spawn } = require("child_process");
+const fs = require('fs');
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-// Used as a template to spawn child processes which can be a python script
-
-// const ls = spawn('python3', ['./server/script1.py']);
-
-// ls.stdout.on('data', (data) => {
-//   console.log(`stdout: ${data}`);
-// });
-
-// ls.stderr.on('data', (data) => {
-//   console.error(`stderr: ${data}`);
-// });
-
-// ls.on('close', (code) => {
-//   console.log(`child process exited with code ${code}`);
-// });
-
-
 app.get('/aa', (req, res) => {
   var dataToSend;
+  // Write data to a json
+  // TODO change to actual data coming from the server
+  let testData = {
+    items: [
+      'apple', 'brown rice', 'grapes', 'milk', 'carrots', 'chicken', 'pasta'
+    ]
+  }
+  fs.writeFileSync('./server/scripts/data/query.json', JSON.stringify(testData))
+
   // spawn new child process to call the python script
   const python = spawn('python3', ['./server/script1.py']);
   // collect data from script
