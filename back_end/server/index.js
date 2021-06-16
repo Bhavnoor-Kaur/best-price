@@ -8,6 +8,8 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+app.use(express.json({limit: '1mb'}))
+
 app.get('/aa', (req, res) => {
   var dataToSend;
   // Write data to a json
@@ -46,6 +48,14 @@ app.get("/api", (req, res) => {
 });
 
 
+app.post('/api_getPrices', (req, res) => {
+  console.log("I got a request");
+  console.log(req.body)
+})
+
+
+
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
+
