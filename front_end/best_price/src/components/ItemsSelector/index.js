@@ -21,7 +21,10 @@ const ItemsSelector = () => {
       },
       body: JSON.stringify(listItms),
     }
-    fetch('/api_getPrices', option)
+    const resp = await fetch('/api_getPrices', option)
+    const data = resp.json();
+    console.log(data)
+  
   }
 
   return (
