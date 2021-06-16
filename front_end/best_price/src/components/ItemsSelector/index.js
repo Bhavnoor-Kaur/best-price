@@ -27,6 +27,10 @@ const ItemsSelector = () => {
   
   }
 
+  const demoListBuilder = () => {
+    setListItms(["apple","brown rice","grapes","milk","carrots","chicken","ketchup"])
+  }
+
   return (
     <>
       <div className="SelContainer">
@@ -38,6 +42,7 @@ const ItemsSelector = () => {
           </div>
           <br />
           <button onClick={submitRequestToServer}>Submit</button>
+          <button onClick={demoListBuilder}>Sample List</button>
         </div>
         <div className="SelItmSelCont">
           <ul className="SelItmList">

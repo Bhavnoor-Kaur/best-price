@@ -5,6 +5,10 @@ const { spawn } = require("child_process");
 const fs = require('fs');
 const { response } = require("express");
 
+const handler = require('./scripts/requestHandler')
+
+
+
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -51,6 +55,10 @@ app.get("/api", (req, res) => {
 
 app.post('/api_getPrices', (req, res) => {
   console.log(req.body)
+  itemsData = req.body;
+  result = handler.handlePriceRequest(itemsData);
+  
+
   res.json({
     status: "success",
     prices: ['a', 'b']

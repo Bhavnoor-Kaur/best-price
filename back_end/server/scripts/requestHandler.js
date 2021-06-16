@@ -34,3 +34,17 @@ function readJson(path) {
   let itemList = JSON.parse(rawData);
   return itemList;
 }
+
+const handlePriceRequest = (itemsSend) => {
+  /*
+  Handle the calling of the python scripts
+  :param itemsSend: list of items to query price
+  :returns object with the result
+  */
+  // Build the object, write it to json, call the python scripts
+  // Return the json file with the list of prices
+  data = {items: itemsSend};
+  writeDataToJson('./server/scripts/data/query.json', data);
+  execPython('./server/scripts/testScript.py');
+  return readJson('./server/scripts/data/result.json')
+}
