@@ -12,7 +12,7 @@ async function execPython(script) {
   :param script: the script to execute
   :returns none
   */
-  const python = spawn('python3', [script]);
+  const python = spawn('sh', [script]);
 
   python.stderr.on('data', (data) => {
     console.error(`stderr: ${data}`);
@@ -47,8 +47,8 @@ const handlePriceRequest = async (itemsSend) => {
   // Return the json file with the list of prices
   data = {items: itemsSend};
   writeDataToJson('./server/scripts/data/query.json', data);
-  await execPython('./server/scripts/testScript.py');
+  await execPython('./findPrice.sh');
   return readJson('./server/scripts/data/result.json')
 }
 
-module.exports = { handlePriceRequest };
+module.exports = { handlePriceRequest, writeDataToJson };

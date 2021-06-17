@@ -15,6 +15,21 @@ const app = express();
 
 app.use(express.json({limit: '1mb'}))
 
+
+
+app.get('/test', (req, res) => {
+  const shellScript = spawn('sh', ['./findPrice.sh']);
+  console.log("Building Process")
+  shellScript.on('close', (code) => {
+    console.log(`child process close all stdio with code ${code}`);
+    let rawData = fs.readFileSync('./server/scripts/data/result.json');
+    let result = JSON.parse(rawData); 
+    console.log(result)
+    res.json(result);
+  });
+})
+
+
 app.get('/aa', (req, res) => {
   var dataToSend;
   // Write data to a json
@@ -27,7 +42,7 @@ app.get('/aa', (req, res) => {
   fs.writeFileSync('./server/scripts/data/query.json', JSON.stringify(testData))
 
   // spawn new child process to call the python script
-  const python = spawn('python3', ['./server/scripts/testScript.py']);
+  const python = spawn('sh', ['./findPrice.sh']);
   // collect data from script
   python.stdout.on('data', function (data) {
     console.log('Pipe data from python script ...');
@@ -56,12 +71,17 @@ app.get("/api", (req, res) => {
 app.post('/api_getPrices', (req, res) => {
   console.log(req.body)
   itemsData = req.body;
-  result = handler.handlePriceRequest(itemsData);
-  // Build the response for the client
-  res.json({
-    status: "success",
-    prices: result
-  })
+  console.log(itemsData)
+  handler.writeDataToJson('./server/scripts/data/query.json', itemsData)
+  const shellScript = spawn('sh', ['./findPrice.sh']);
+  console.log("Building Process")
+  shellScript.on('close', (code) => {
+    console.log(`child process close all stdio with code ${code}`);
+    let rawData = fs.readFileSync('./server/scripts/data/result.json');
+    let result = JSON.parse(rawData); 
+    console.log(result)
+    res.json(result);
+  });
 })
 
 
