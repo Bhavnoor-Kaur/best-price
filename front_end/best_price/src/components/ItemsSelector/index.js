@@ -21,10 +21,20 @@ const ItemsSelector = () => {
       },
       body: JSON.stringify(listItms),
     }
-    const resp = await fetch('/api_getPrices', option)
-    const data = resp.json();
-    console.log(data)
-  
+    // const resp = await fetch('/api_getPrices', option)
+    // const data = resp.json();
+    // setDemoPara(data.superstore)
+    // console.log(data)
+
+    let superstore = await fetch('/api_getPrices', option)
+    .then(response => response.json())
+    .then(text => text["superstore"])
+    let demoText = ''
+    superstore.map(item => {
+      demoText += item.item + ': ' + item.price + ', '
+    })
+    setDemoPara(demoText);
+    // setDemoPara(superstore)
   }
 
   const demoListBuilder = () => {
