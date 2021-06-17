@@ -43,6 +43,7 @@ def dump_items(data):
 
 if __name__ == '__main__':
   load_items()
+  print(items)
   resSuperstore = check_superstore()
   result = {'superstore': resSuperstore}
   dump_items(result)
