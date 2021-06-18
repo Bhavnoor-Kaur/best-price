@@ -71,8 +71,7 @@ app.get("/api", (req, res) => {
 app.post('/api_getPrices', (req, res) => {
   console.log(req.body)
   itemsData = req.body;
-  console.log(itemsData)
-  handler.writeDataToJson('./server/scripts/data/query.json', itemsData)
+  handler.writeDataToJson('./server/scripts/data/query.json', {items: itemsData})
   const shellScript = spawn('sh', ['./findPrice.sh']);
   console.log("Building Process")
   shellScript.on('close', (code) => {
