@@ -1,5 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.firefox.options import Options
 import os
 import time
 from threading import Thread
@@ -31,14 +31,15 @@ def query_price(search):
   # Instantiate an Options object
   # and add the "--headless" argument
   opts = Options()
-  opts.add_argument(" --headless")
-  # Path to the browser binary
+  # opts.add_argument(" --headless")
+  opts.headless = True
+  # os.environ['MOZ_HEADLESS'] = '1'
   # TODO Change location with respect to final location
-  opts.binary_location= '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' 
+  opts.binary_location= '/usr/bin/firefox' 
   # Set the location of the webdriver
-  chrome_driver = os.getcwd() +"/chromedriver"
+  firefox_driver = os.getcwd() +"/geckodriver"
   # Instantiate a webdriver
-  driver = webdriver.Chrome(options=opts, executable_path=chrome_driver)
+  driver = webdriver.Firefox(options=opts, executable_path=firefox_driver)
   # driver = webdriver.Chrome(chrome_driver)
   # Load the HTML page
   try:
