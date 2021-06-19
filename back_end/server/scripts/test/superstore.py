@@ -15,6 +15,6 @@ driver.get(url)
 time.sleep(10)
 print(driver.title)
 item_list = driver.find_elements_by_css_selector('span.price__value.comparison-price-list__item__price__value')
-print(driver.page_source)
+print(len(item_list))
 
 driver.quit()
