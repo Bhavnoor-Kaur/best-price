@@ -1,0 +1,41 @@
+1624077074498	geckodriver	INFO	Listening on 127.0.0.1:40365
+1624077075505	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileXKRQqz"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1624077076412	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileXKRQqz/search.json.mozlz4", (void 0)))
+1624077079545	Marionette	INFO	Listening on port 43201
+1624077079659	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://d3rzy2hoo29vi.cloudfront.net/assets/js/at_v1.js, line 6: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://d3rzy2hoo29vi.cloudfront.net/assets/js/at_v1.js, line 6: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+JavaScript warning: https://d3rzy2hoo29vi.cloudfront.net/assets/js/at_v1.js, line 6: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://d3rzy2hoo29vi.cloudfront.net/assets/js/at_v1.js, line 6: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1624077317493	geckodriver	INFO	Listening on 127.0.0.1:39521
+1624077324051	geckodriver	INFO	Listening on 127.0.0.1:51891
+1624077325081	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileuy1Dnw"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1624077326183	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileuy1Dnw/search.json.mozlz4", (void 0)))
+1624077329136	Marionette	INFO	Listening on port 42119
+1624077329223	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://d3rzy2hoo29vi.cloudfront.net/assets/js/at_v1.js, line 6: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://d3rzy2hoo29vi.cloudfront.net/assets/js/at_v1.js, line 6: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+JavaScript warning: https://d3rzy2hoo29vi.cloudfront.net/assets/js/at_v1.js, line 6: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://d3rzy2hoo29vi.cloudfront.net/assets/js/at_v1.js, line 6: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
