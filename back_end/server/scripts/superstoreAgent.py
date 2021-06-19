@@ -1,8 +1,9 @@
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.options import Options
 import os
 import time
 from threading import Thread
+from bs4 import BeautifulSoup
 
 result = []
 
@@ -28,28 +29,19 @@ def query_price(search):
   # Get a valid url
   url = make_url(search)
 
-  # Instantiate an Options object
-  # and add the "--headless" argument
   opts = Options()
-  # opts.add_argument(" --headless")
-  opts.headless = True
-  # os.environ['MOZ_HEADLESS'] = '1'
-  # TODO Change location with respect to final location
-  opts.binary_location= '/usr/bin/firefox' 
-  # Set the location of the webdriver
-  firefox_driver = os.getcwd() +"/geckodriver"
-  # Instantiate a webdriver
-  driver = webdriver.Firefox(options=opts, executable_path=firefox_driver)
-  # driver = webdriver.Chrome(chrome_driver)
-  # Load the HTML page
+  opts.add_argument(" --headless")
+  opts.binary_location= '/usr/bin/google-chrome'
+  chrome_driver = os.getcwd() +"/chromedriver_ubuntu"
+  driver = webdriver.Chrome(options=opts, executable_path=chrome_driver)
   try:
     driver.get(url)
     # print(innerHTML.get_attribute("innerText"))
     # Sleep is required to give time to the browser to render the HTML after executing all the scripts
-    time.sleep(2)
-    # Get the per pound price of the item
-    item_list = driver.find_elements_by_css_selector('span.price__value.comparison-price-list__item__price__value')
-    itemObj = {'item': search, 'price': item_list[0].text}
+    time.sleep(3)
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+    item_list = soup.find_all('span', class_='price__value comparison-price-list__item__price__value')
+    itemObj = {'item': search, 'price': item_list[0].get_text()}
     result.append(itemObj)
     # print(search + ',' + item_list[0].text) TODO Can be used to print the price
   except Exception as e:
@@ -74,3 +66,7 @@ def get_super_prices(items):
   for query_threads in list_threads:
     query_threads.join()
   return result
+
+if __name__ == "__main__":
+  result = get_super_prices(["apple"])
+  print(result)
