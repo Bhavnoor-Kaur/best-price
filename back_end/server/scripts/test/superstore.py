@@ -6,30 +6,27 @@ import time
 
 url = 'https://www.realcanadiansuperstore.ca/search?search-bar=Apple'
 
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
-#path where browser is installed
-binary = '/usr/bin/firefox'
-options = webdriver.FirefoxOptions()
-options.binary = binary
-options.add_argument('start-maximized')
-options.add_argument('--headless')
-
-
-cap = DesiredCapabilities().FIREFOX
-cap["marionette"] = False
-
-
-path_to_driver = "/home/msnanda515/geckodriver"
-
-# run firefox webdriver from executable path 
-driver = webdriver.Firefox(firefox_options=options, capabilities=cap, executable_path = path_to_driver)
-#driver = webdriver.Firefox(capabilities=cap, executable_path = path_to_driver)
-
+# Instantiate an Options object
+# and add the "--headless" argument
+opts = Options()
+# opts.add_argument(" --headless")
+opts.headless = True
+# os.environ['MOZ_HEADLESS'] = '1'
+# TODO Change location with respect to final location
+opts.binary_location= '/usr/bin/firefox' 
+# Set the location of the webdriver
+firefox_driver = "/home/msnanda515/geckodriver"
+# Instantiate a webdriver
+driver = webdriver.Firefox(options=opts, executable_path=firefox_driver)
+# driver = webdriver.Chrome(chrome_driver)
+# Load the HTML page
 driver.get(url)
 # innerHTML = driver.execute_script("return document.body")
 # WebDriverWait(driver, 10).until(EC.frame_to_be_available_and_switch_to_it((By.ID,"ptifrmtgtframe")))
