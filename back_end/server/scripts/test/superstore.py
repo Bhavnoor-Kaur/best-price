@@ -12,10 +12,10 @@ chrome_driver = os.getcwd() +"/chromedriver"
 driver = webdriver.Chrome(options=opts, executable_path=chrome_driver)
 url = 'https://www.realcanadiansuperstore.ca/search?search-bar=apple'
 driver.get(url)
-time.sleep(5)
+time.sleep(10)
 print(driver.title)
+print("Printing items")
 item_list = driver.find_elements_by_css_selector('span.price__value.comparison-price-list__item__price__value')
 for item in item_list:
 	print(item.text)
-
 driver.quit()
