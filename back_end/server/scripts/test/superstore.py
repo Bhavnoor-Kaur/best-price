@@ -14,11 +14,15 @@ chrome_driver = os.getcwd() +"/chromedriver"
 driver = webdriver.Chrome(options=opts, executable_path=chrome_driver)
 url = 'https://www.realcanadiansuperstore.ca/search?search-bar=apple'
 driver.get(url)
-time.sleep(10)
+time.sleep(3)
 print(driver.title)
-soup = BeautifulSoup(driver.page_source, 'html_parser')
+soup = BeautifulSoup(driver.page_source, 'html.parser')
 firstPrice = soup.find_all('li', class_='comparison-price-list__item')
+firstPrice1 = soup.find_all('span', class_='price__value comparison-price-list__item__price__value')
 print(len(firstPrice))
+print(len(firstPrice1))
+print(firstPrice[0])
+print(firstPrice1[0])
 # item_list = driver.find_elements_by_css_selector('span.price__value.comparison-price-list__item__price__value')
 # print(len(item_list))s
 
