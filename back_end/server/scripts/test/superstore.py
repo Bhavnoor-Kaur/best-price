@@ -1,9 +1,6 @@
 import os
 import time
 
-
-
-
 url = 'https://www.realcanadiansuperstore.ca/search?search-bar=Apple'
 
 from selenium import webdriver
@@ -24,22 +21,21 @@ opts.binary_location= '/usr/bin/firefox'
 # Set the location of the webdriver
 firefox_driver = "/home/msnanda515/geckodriver"
 # Instantiate a webdriver
+print("Opening browser")
 driver = webdriver.Firefox(options=opts, executable_path=firefox_driver)
 # driver = webdriver.Chrome(chrome_driver)
 # Load the HTML page
+print("Opeing URL")
 driver.get(url)
 # innerHTML = driver.execute_script("return document.body")
 # WebDriverWait(driver, 10).until(EC.frame_to_be_available_and_switch_to_it((By.ID,"ptifrmtgtframe")))
 # WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, "//span[@id='HRS_APPL_WRK_HRS_PAGE_TITLE']")))
 # print(innerHTML.get_attribute("innerText"))
-time.sleep(2)
-html = driver.execute_script("return document.getElementsByTagName('html')[0].innerHTML")
-# print(html)
-# soup_source = driver.page_source
-# soup = BeautifulSoup(soup_source, 'html.parser')
-
-# firstPrice = soup.find_all('li', class_='comparison-price-list__item')
+print("Sleep")
+time.sleep(10)
+print("Sleep Over")
 item_list = driver.find_elements_by_css_selector('span.price__value.comparison-price-list__item__price__value')
+print("Found Result")
 print(item_list[0].text)
 # print(driver.find_element_by_css_selector('li.comparison-price-list__item'))
 driver.quit()
