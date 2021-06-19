@@ -38,7 +38,7 @@ def query_price(search):
     driver.get(url)
     # print(innerHTML.get_attribute("innerText"))
     # Sleep is required to give time to the browser to render the HTML after executing all the scripts
-    time.sleep(3)
+    time.sleep(5)
     soup = BeautifulSoup(driver.page_source, 'html.parser')
     item_list = soup.find_all('span', class_='price__value comparison-price-list__item__price__value')
     itemObj = {'item': search, 'price': item_list[0].get_text()}
@@ -68,5 +68,5 @@ def get_super_prices(items):
   return result
 
 if __name__ == "__main__":
-  result = get_super_prices(["apple"])
+  result = get_super_prices(["apple", "mango"])
   print(result)
