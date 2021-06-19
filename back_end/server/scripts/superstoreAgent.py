@@ -25,6 +25,8 @@ def make_url(search):
 
 
 def query_price(search):
+  # TODO 
+  print("Query starting", search)
   global result
   # Get a valid url
   url = make_url(search)
@@ -48,6 +50,7 @@ def query_price(search):
     print("[Exception]", e)
   finally:
     driver.quit()
+  print("query Done", search)
 
 
 def get_super_prices(items):
