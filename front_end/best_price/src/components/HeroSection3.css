@@ -1,5 +1,5 @@
 .hero-container3{
-    /*padding-top: 10rem;*/
+    padding-top: 30px !important;;
     height: 100vh !important;
     width: 100%;
     background: white;
@@ -12,7 +12,7 @@
     /*box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);*/
     object-fit: contain;
     display: flex;
-    padding: 40px;
+    padding: 60px;
 }
 
 .hero-container3 > h1 {
