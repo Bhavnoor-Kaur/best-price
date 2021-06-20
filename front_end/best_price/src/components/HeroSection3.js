@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import { Button } from './Button'
 import './HeroSection3.css'
 
@@ -39,7 +40,9 @@ function HeroSection3() {
                     </div>
                 </div>
                 <div class="row gx-4 gx-lg-5 pad">
-                    <a class="text-center mt-0 btn btn-primary color-btn btn-xl" href="#about">Get Started!</a>
+                    <Link to='/about' className='text-center mt-0 btn btn-primary color-btn btn-xl'>
+                    Get Started!
+                        </Link>
                 </div>
         </div>
     )
