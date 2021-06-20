@@ -5,6 +5,7 @@ import './ItemsSelector.css'
 const ItemsSelector = () => {
   const [listItms, setListItms] = useState([]);
   const [demoPara, setDemoPara] = useState('');
+  const [demoListImage, setDemoList] = useState('');
 
   const addItemToList = () => {
     let itemAdded = document.getElementById("ItemAddTextBox").value;
@@ -51,18 +52,39 @@ const ItemsSelector = () => {
     setListItms(["apple","brown rice","grapes","milk","carrots","chicken","ketchup"])
   }
 
+  const demoListImageBuilder = async () => {
+    let imageData = document.getElementById('imageup').files[0]
+    const option = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({image: imageData}),
+    }
+    let resJson = await fetch('/api_getPrices', option)
+    .then(response => response.json())
+
+
+    let imList = resJson["items"]
+    setDemoList(imList)
+  }
+
+
   return (
     <>
       <div className="SelContainer">
         <div className="SelInputCont">
           <div className="SelInputAdd">
             <input type="text" className="SelInput" id="ItemAddTextBox" />
+            <input type="file"  id="imageup" accept="image/*" />
             <button className="SelAdd" onClick={addItemToList}>Add</button>
             <p className="msg-wrapper">{demoPara}</p>
+            <p className="msg-wrapper">{demoListImage}</p>
           </div>
           <br />
           <button onClick={submitRequestToServer}>Submit</button>
           <button onClick={demoListBuilder}>Sample List</button>
+          <button onClick={demoListImageBuilder}>Get Image Data</button>
         </div>
         <div className="SelItmSelCont">
           <ul className="SelItmList">
