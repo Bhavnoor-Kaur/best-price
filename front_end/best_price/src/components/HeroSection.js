@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from './Button'
+import {Link} from 'react-router-dom';
 import './HeroSection.css'
 
 function HeroSection() {
@@ -11,7 +12,7 @@ function HeroSection() {
             <p>Spend Less, Save More!</p>
             <div className="hero-btns">
             {/*<img src={"./images/Geo.jpg"} />*/}
-                {<Button className='btn' buttonStyle='btn--outline' buttonSize='btn--large'>Learn More</Button>}
+                {<Button className='btn' buttonStyle='btn--outline' buttonSize='btn--large'>Learn More!</Button>}
                 </div>
         {/*<div className='check'>
         <h1>Heading for the section</h1>
