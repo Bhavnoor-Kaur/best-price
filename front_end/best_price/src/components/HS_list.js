@@ -9,7 +9,7 @@ function HS_list() {
   const [listItms, setListItms] = useState([]);
   const [demoPara, setDemoPara] = useState('');
   const [demoListImage, setDemoList] = useState('');
-  const [resData, setResData] = useState({})
+  const [resData, setResData] = useState('')
 
  const addItemToList = () => {
     let itemAdded = document.getElementById("fname").value;
@@ -73,22 +73,14 @@ function HS_list() {
     setDemoList(imList)
   }
   const featureBox1 = [
-    "10 users included",
-    "2 GB of storage",
-    "Email support",
-    "Help center access"
+    "Best Price",
+    
   ];
   const featureBox2 = [
-    "20 users included",
-    "10 GB of storage",
-    "Priority email support",
-    "Help center access"
+    "Available",
   ];
   const featureBox3 = [
-    "30 users included",
-    "15 GB of storage",
-    "Phone and email support",
-    "Help center access"
+    "Available",
   ];
 
     return (
@@ -98,7 +90,7 @@ function HS_list() {
           <div class ="Card" align = "center">
             <input className = "inline" type="text" id="fname" name="firstname" placeholder="Add your items here" />
             <button class="btn add-item" buttonStyle='btn--outline' buttonSize='btn--large' onClick={addItemToList}>Add Item</button>
-            <p>{demoPara}</p>
+            {/* <p>{demoPara}</p> */}
             <br />
             <div className="SelItmSelCont">
             <ul className="SelItmList">
@@ -113,7 +105,7 @@ function HS_list() {
             <button className="btn" onClick={demoListBuilder}>Demo</button>
           </div>
         </div>
-        <div className="card-deck mb-3 text-center">
+        <div className="card-deck mb-3 text-center" style={resData == '' ? {display: 'none'} : {}}>
             <Box
               price={resData["superTotal"]}
               title="Superstore"
