@@ -44,35 +44,25 @@ function HS_list() {
  
     return (
         <div className='hero-container-list'>
-            
-            <h1>SERCH BAR HERE</h1>
-            <input type="text" id="fname" name="firstname" placeholder="Your name.." />
-           
+          <h1></h1>
+          <div class ="Card" align = "center">
+            <input className = "inline" type="text" id="fname" name="firstname" placeholder="Add your items here" />
+            <button class="btn add-item" buttonStyle='btn--outline' buttonSize='btn--large' onClick={addItemToList}>Add Item</button>
             <p>{demoPara}</p>
-          <br />
-          <div className="hero-btns-list">
-            {/*<img src={"./images/Geo.jpg"} />*/}
-            <button className="SelAdd" onClick={addItemToList}>Add</button>
-                {<Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>GET STARTED</Button>}
-                {<Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large'>Tutorial <i className='far fa-play-circle'/> </Button>}
-                <button onClick={submitRequestToServer}>Submit</button>
-                <button onClick={demoListBuilder}>Sample List</button>
-         </div>
-         
-        <div className="SelItmSelCont">
-          <ul className="SelItmList">
-            {listItms.map((item, key) => (
+            <br />
+            <div className="SelItmSelCont">
+            <ul className="SelItmList">
+              {listItms.map((item, key) => (
               <li key={key} className="SelItmListEl">{item}</li>
             ))}
-          </ul>
-        </div>
-            <p></p>
-            
-        {/*<div className='check'>
-        <h1>Heading for the section</h1>
-    </div>*/}
+            </ul>
             </div>
-        
+          </div> 
+          <div className="hero-btns-list">
+            <button className="btn" onClick={submitRequestToServer}>Submit</button>
+            <button className="btn" onClick={demoListBuilder}>Demo</button>
+          </div>
+        </div> 
     )
 }
 export default HS_list

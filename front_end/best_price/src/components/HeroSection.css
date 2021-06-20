@@ -7,8 +7,8 @@ video {
 }
 
 .hero-container {
-    padding-top: 10rem;
-    height: 93vh;
+    padding-top: 5rem;
+    height: 91vh;
     width: 100%;
     background: linear-gradient(#09b39c, #99e7c7);
     background-position: center;
