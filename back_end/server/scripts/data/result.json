@@ -1,1 +1,1 @@
-{"superstore": []}
+{"superstore": [{"item": "milk", "price": "$0.12"}], "saveonfoods": [{"item": "milk", "cur": "$", "price": 4.99, "units": ""}], "voila": [{"item": "milk", "cur": "$", "price": 4.99, "units": ""}], "superTotal": 10, "saveTotal": 10, "voilaTotal": 10}

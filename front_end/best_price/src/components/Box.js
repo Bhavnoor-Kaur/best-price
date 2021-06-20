@@ -9,7 +9,7 @@ const Box = (props) => {
       </div>
       <div className="card-body">
         <h1 className="card-title pricing-card-title">
-          ${price} <small className="text-muted">/ mo</small>
+          ${price} <small className="text-muted"></small>
         </h1>
         <ul className="list-unstyled mt-3 mb-4">
           {feature &&

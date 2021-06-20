@@ -3,7 +3,6 @@ from selenium.webdriver.chrome.options import Options
 import os
 import time
 from threading import Thread
-from bs4 import BeautifulSoup
 
 result = []
 
@@ -25,32 +24,28 @@ def make_url(search):
 
 
 def query_price(search):
-  # TODO 
-  print("Query starting", search)
   global result
   # Get a valid url
   url = make_url(search)
-
   opts = Options()
   opts.add_argument(" --headless")
-  opts.binary_location= '/usr/bin/google-chrome'
-  chrome_driver = os.getcwd() +"/chromedriver_ubuntu"
+  opts.binary_location= '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' 
+  chrome_driver = os.getcwd() +"/chromedriver"
   driver = webdriver.Chrome(options=opts, executable_path=chrome_driver)
   try:
     driver.get(url)
     # print(innerHTML.get_attribute("innerText"))
     # Sleep is required to give time to the browser to render the HTML after executing all the scripts
-    time.sleep(5)
-    soup = BeautifulSoup(driver.page_source, 'html.parser')
-    item_list = soup.find_all('span', class_='price__value comparison-price-list__item__price__value')
-    itemObj = {'item': search, 'price': item_list[0].get_text()}
+    time.sleep(2)
+    # Get the per pound price of the item
+    item_list = driver.find_elements_by_css_selector('span.price__value.comparison-price-list__item__price__value')
+    itemObj = {'item': search, 'price': item_list[0].text}
     result.append(itemObj)
     # print(search + ',' + item_list[0].text) TODO Can be used to print the price
   except Exception as e:
     print("[Exception]", e)
   finally:
     driver.quit()
-  print("query Done", search)
 
 
 def get_super_prices(items):
@@ -69,7 +64,3 @@ def get_super_prices(items):
   for query_threads in list_threads:
     query_threads.join()
   return result
-
-if __name__ == "__main__":
-  result = get_super_prices(["apple", "mango"])
-  print(result)
