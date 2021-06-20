@@ -38,7 +38,10 @@ def query_price(search):
     # Sleep is required to give time to the browser to render the HTML after executing all the scripts
     time.sleep(2)
     # Get the per pound price of the item
-    item_list = driver.find_elements_by_css_selector('span.price__value.comparison-price-list__item__price__value')
+    
+    item_list = driver.find_elements_by_css_selector('span.price__value.selling-price-list__item__price.selling-price-list__item__price--now-price__value')
+    # if len(item_list == 0):
+    # item_list = driver.find_elements_by_css_selector('span.price__value.comparison-price-list__item__price__value')
     itemObj = {'item': search, 'price': item_list[0].text}
     result.append(itemObj)
     # print(search + ',' + item_list[0].text) TODO Can be used to print the price
