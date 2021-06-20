@@ -1,18 +1,24 @@
 .hero-container3{
+<<<<<<< HEAD
     padding-top: 10rem;
     
     height: 65vh !important;
+=======
+    padding-top: 30px !important;;
+    height: 100vh !important;
+>>>>>>> e8b3899368bb4956c8d6f685c653cec44856c079
     width: 100%;
-  background: white;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-  flex-direction: column;
+    background: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    flex-direction: column;
     align-items: center;
     /*box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);*/
     object-fit: contain;
     display: flex;
+    padding: 60px;
 }
 
 .hero-container3 > h1 {
@@ -42,6 +48,7 @@
     margin-top: calc(var(--bs-gutter-y) * -1);
     margin-right: calc(var(--bs-gutter-x) / -2);
     margin-left: calc(var(--bs-gutter-x) / -2);
+    padding: 30px;
 }
 .row > * {
     flex-shrink: 0;
@@ -61,7 +68,7 @@
 
 .col-lg-3 {
     flex: 0 0 auto;
-    width: 25%;
+    width: 30%;
 }
 
 .col-md-6 {
@@ -87,6 +94,8 @@
 
 .text-primary {
     color: #f7592e !important;
+    font-size: 35px;
+    padding: 10px;
 }
 
 .h4 {

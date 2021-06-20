@@ -6,6 +6,16 @@ video {
     z-index: -1;
 }
 
+.logo {
+  margin-bottom: 5px !important;
+}
+
+.logo-primary {
+  color: #f87550 !important;
+  font-size: 100px;
+  margin-top: 50px;
+}
+
 .hero-container {
     padding-top: 5rem;
     height: 91vh;
@@ -27,7 +37,6 @@ video {
     vertical-align: middle;
     color: white;
     font-size: 90px;
-    margin-top: 100px;
     z-index: 1;
 }
 
