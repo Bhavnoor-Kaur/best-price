@@ -2,13 +2,10 @@ import React from 'react'
 import { Component, useRef, useEffect } from "react";
 import {Link} from 'react-router-dom';
 import '../../App.css'
-import HeroSection from '../HeroSection'
-import HeroSection2 from '../HeroSection2'
 import HeroSection3 from '../HeroSection3'
 import HeroSection4 from '../HeroSection4'
 import './HeroSection.css'
 import './HeroSection2.css'
-import { Button } from './Button'
 
 import Footer from '../Footer'
 
