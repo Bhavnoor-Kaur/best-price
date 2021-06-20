@@ -25,3 +25,7 @@
   list-style-type: none;
   font-size: 1.5rem;
 }
+
+.msg-wrapper {
+  white-space: pre-wrap;
+}

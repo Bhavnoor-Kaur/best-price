@@ -26,11 +26,16 @@ const ItemsSelector = () => {
     // setDemoPara(data.superstore)
     // console.log(data)
 
-    let superstore = await fetch('/api_getPrices', option)
+    let resJson = await fetch('/api_getPrices', option)
     .then(response => response.json())
-    .then(text => text["superstore"])
-    let demoText = ''
-    superstore.map(item => {
+    let resSuperstore = resJson["superstore"]
+    let resSaveonfoods = resJson["saveonfoods"]
+    let demoText = 'Superstore: '
+    resSuperstore.map(item => {
+      demoText += item.item + ': ' + item.price + ', '
+    })
+    demoText += "\nSaveonfoods: ";
+    resSaveonfoods.map(item => {
       demoText += item.item + ': ' + item.price + ', '
     })
     setDemoPara(demoText);
@@ -48,7 +53,7 @@ const ItemsSelector = () => {
           <div className="SelInputAdd">
             <input type="text" className="SelInput" id="ItemAddTextBox" />
             <button className="SelAdd" onClick={addItemToList}>Add</button>
-            <p>{demoPara}</p>
+            <p className="msg-wrapper">{demoPara}</p>
           </div>
           <br />
           <button onClick={submitRequestToServer}>Submit</button>
