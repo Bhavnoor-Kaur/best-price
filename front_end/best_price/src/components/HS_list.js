@@ -53,7 +53,7 @@ function HS_list() {
   }
 
   const demoListBuilder = () => {
-    setListItms(["milk", "bread", "eggs", "chicken", "ketchup"])
+    setListItms(["bread", "eggs", "chicken", "ketchup"])
   }
 
   const demoListImageBuilder = async () => {
