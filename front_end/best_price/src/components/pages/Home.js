@@ -36,7 +36,7 @@ function Home () {
         <h1>Heading for the section</h1>
     </div>*/}
             </div>
-            <div className='hero-container2' ref={ref}>
+            <div ref={ref} className='hero-container2' >
             
             <h1>We've got what you need!</h1>
             <h2>_______</h2>

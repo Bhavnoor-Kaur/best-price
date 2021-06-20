@@ -74,13 +74,12 @@ function HS_list() {
   }
   const featureBox1 = [
     "Best Price",
-    
   ];
   const featureBox2 = [
-    "Available",
+    "_____",
   ];
   const featureBox3 = [
-    "Available",
+    "_____",
   ];
 
     return (
@@ -109,23 +108,17 @@ function HS_list() {
             <Box
               price={resData["superTotal"]}
               title="Superstore"
-              btnClass="btn-outline-primary"
-              btnTitle="Sign up for free"
               feature={featureBox1}
             />
             <Box
               feature={featureBox2}
               price={resData["saveTotal"]}
               title="Save On Foods"
-              btnClass="btn-primary"
-              btnTitle="Get started"
             />
             <Box
               feature={featureBox3}
               price={resData["voilaTotal"]}
-              title="Voila"
-              btnClass="btn-primary"
-              btnTitle="Contact us"
+              title="Safeway"
             />
           </div>
         </>

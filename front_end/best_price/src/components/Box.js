@@ -1,4 +1,5 @@
 import React from "react";
+import './HS_list.css'
 
 const Box = (props) => {
   const { title, btnClass, btnTitle, price, feature } = props;
@@ -14,7 +15,7 @@ const Box = (props) => {
         <ul className="list-unstyled mt-3 mb-4">
           {feature &&
             feature.map((data, index) => {
-              return <li key={index}>{data}</li>;
+              return <li className="feature-style" key={index}>{data}</li>;
             })}
         </ul>
         <button type="button" className={`btn btn-lg btn-block ${btnClass}`}>

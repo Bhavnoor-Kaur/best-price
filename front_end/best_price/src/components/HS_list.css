@@ -1,7 +1,7 @@
 .hero-container-list {
   padding-top: 8px;
   padding-bottom: 50px;
-  background: linear-gradient(#09b39c, #99e7c7);
+  background: linear-gradient(#09b39c, #99e7c7) !important;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -82,6 +82,11 @@
   border-width: 0.2px;
 }
 
+.card-deck {
+  padding: 30px;
+  padding-top: 30px !important;
+}
+
 @media screen and (max-width: 960px) {
     .hero-container-list > h1 {
         font-size: 60px;
@@ -136,4 +141,8 @@ textarea:focus {
 
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: white;
+}
+.feature-style {
+  font-size: 22px;
+  color: #09b39c;
 }
