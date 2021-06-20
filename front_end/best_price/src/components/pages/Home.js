@@ -12,7 +12,6 @@ function Home () {
         <HeroSection />
         <HeroSection2 />
         <HeroSection3 />
-        <HeroSection4 />
         <Footer />
         </>
 
