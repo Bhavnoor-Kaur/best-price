@@ -8,7 +8,8 @@ video {
 
 .hero-container3{
     padding-top: 10rem;
-    height: 60vh;
+    padding-bottom: 10rem;
+    height: 85vh;
     width: 100%;
   background: white;
   background-position: center;
@@ -26,8 +27,8 @@ video {
     text-align: center;
     vertical-align: middle;
     color: black;
-    font-size: 70px;
-    margin-top: 100px;
+    font-size: 36px;
+    margin-top: 0px;
     z-index: 1;
 }
 
@@ -41,6 +42,81 @@ video {
     z-index: 10;
 }
 
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+.row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+.gx-4 {
+    --bs-gutter-x: 20px;
+}
+
+.gx-lg-5 {
+    --bs-gutter-x: 120px;
+}
+
+.col-lg-3 {
+    flex: 0 0 auto;
+    width: 25%;
+}
+
+.col-md-6 {
+    flex: 0 0 auto;
+    width: 25%;
+}
+.text-center {
+    text-align: center !important;
+}
+
+.mt-5 {
+    margin-top: 30px !important;
+}
+
+.mb-2 {
+    margin-bottom: 10px !important;
+}
+@media (min-width: 1200px) {
+    .fs-1 {
+      font-size: 2.5rem !important;
+    }
+}
+
+.text-primary {
+    color: #f7592e !important;
+}
+
+.h4 {
+    margin-top: 0;
+    margin-bottom: 10rem;
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 500;
+    line-height: 1.5; 
+    font-size: 24px;
+}
+
+.mb-2 {
+    margin-bottom: 5px !important;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
 
 .hero-btns3 {
     color: black;
@@ -55,6 +131,15 @@ video {
     margin-left: 4px;
 }
 
+.color-btn {
+    background-color: #41B3A3;
+}
+.color-btn:hover {
+    background-color: #037768;
+}
+.pad {
+    padding-top: 30px;
+}
 @media screen and (max-width: 960px) {
     .hero-container3 > h1 {
         font-size: 60px;
