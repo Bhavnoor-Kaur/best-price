@@ -20,7 +20,7 @@ function Home () {
     return(
         <>
         <div className='hero-container'>
-            
+            <div class="logo"><i class="fas fa-hand-holding-usd logo-primary"></i></div>
             <h1>Best-Price</h1>
             <h2>____________</h2>
             <p>Spend Less, Save More!</p>
@@ -40,7 +40,7 @@ function Home () {
             
             <h1>We've got what you need!</h1>
             <h2>_______</h2>
-            <p>o8fuiy,djgcvhṅu,fydmtsnhfxcv bnjtdhmfxvc nbmgyfrmutdnsrgfzxcgvhbgjuyftdrsgedafz</p>
+            <p>BestPrice is a web application which compares store prices to not only find the best deals, but also the best overall price you have to pay. It finds the cheapest store for your grocery needs!</p>
             </div>
         <HeroSection3 />
         </>

@@ -3,12 +3,12 @@
     padding-bottom: 10rem;
     height: 60vh;
     width: 100%;
-  background: white;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-  flex-direction: column;
+    background: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    flex-direction: column;
     align-items: center;
     /*box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);*/
     object-fit: contain;

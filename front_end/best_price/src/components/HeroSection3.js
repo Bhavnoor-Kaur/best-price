@@ -11,30 +11,30 @@ function HeroSection3() {
             <div class="row gx-4 gx-lg-5">
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Step 1</h3>
-                            <p class="text-muted mb-0">We start here!</p>
+                            <div class="mb-2"> <i class="fas fa-list-ul text-primary"></i></div>
+                            <h3 class="h4 mb-2">Create</h3>
+                            <p class="text-muted mb-0">Start your shopping list by adding items anywhere, anytime.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Step 2</h3>
-                            <p class="text-muted mb-0">This is the next step!</p>
+                            <div class="mb-2"><i class="fas fa-greater-than text-primary"></i></div>
+                            <h3 class="h4 mb-2">Compare</h3>
+                            <p class="text-muted mb-0">Compare the prices for your shopping list across multiple stores.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Step 3</h3>
-                            <p class="text-muted mb-0">This is the step after!</p>
+                            <div class="mb-2"><i class="fas fa-tag text-primary"></i></div>
+                            <h3 class="h4 mb-2">Best-Price</h3>
+                            <p class="text-muted mb-0">Get the Best Price for your shopping List. View the breakdown for specific items!</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Step 4</h3>
-                            <p class="text-muted mb-0">And you finally we get the results!</p>
+                            <div class="mb-2"><i class="fas fa-shopping-cart text-primary"></i></div>
+                            <h3 class="h4 mb-2">Shop</h3>
+                            <p class="text-muted mb-0">Congrats! You have the Best Price. Enjoy Shopping while you save :)</p>
                         </div>
                     </div>
                 </div>
