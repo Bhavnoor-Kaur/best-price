@@ -38,8 +38,12 @@ def query_price(search):
     # Sleep is required to give time to the browser to render the HTML after executing all the scripts
     time.sleep(2)
     # Get the per pound price of the item
-    item_list = driver.find_elements_by_css_selector('span.price__value.comparison-price-list__item__price__value')
-    itemObj = {'item': search, 'price': item_list[0].text}
+    try:
+      item_list = driver.find_elements_by_css_selector('span.price__value.selling-price-list__item__price.selling-price-list__item__price--now-price__value')
+    except:
+      item_list = driver.find_elements_by_css_selector('span.price__value.comparison-price-list__item__price__value')
+    priceIt = item_list[0].text
+    itemObj = {'item': search, 'price': priceIt[1: len(priceIt)]}
     result.append(itemObj)
     # print(search + ',' + item_list[0].text) TODO Can be used to print the price
   except Exception as e:
@@ -64,3 +68,8 @@ def get_super_prices(items):
   for query_threads in list_threads:
     query_threads.join()
   return result
+
+# if __name__ == '__main__':
+#   itemList = ["Apple","mango","carrot","grapes","banana", "milk", "eggs", "ketchup"]
+#   print(get_super_prices(itemList))
+#   print(len(itemList))
