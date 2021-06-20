@@ -23,61 +23,6 @@ def make_url(search):
   return add
 
 
-def process_text(priceText):
-  '''
-  processed the text and obtains different fields from it
-  :param priceText: string containing information about the price
-  '''
-  textPassed = '' 
-  for i in range(0, len(priceText)):
-    textPassed = textPassed + priceText[i]
-  priceText = textPassed
-  processed = {}
-  firstNo = 0
-  lastNo = len(priceText)
-  flag1 = 0
-  flag2 = 0
-  for i in range(0, len(priceText)):
-    if flag1 == 0 and priceText[i].isdigit():
-      firstNo = i
-      flag1 = 1
-    if flag1 == 1 and flag2 == 0 and priceText[i].isdigit():
-      lastNo = i + 1
-    if priceText[i] == '.' and flag1 == 1 and i < len(priceText) and priceText[i+1].isdigit():
-      pass
-    elif flag1 == 1 and priceText[i].isdigit() == False:
-      flag2 = 1
-  try:
-    cur = priceText[0: firstNo]
-    price = priceText[firstNo: lastNo]
-    if lastNo >= len(priceText):
-      units = ''
-    else:
-      units = priceText[lastNo: len(priceText)]
-    processed["cur"] = cur
-    processed["price"] = float(price)
-    processed["units"] = units
-  except Exception as e:
-    print("[Exception]", e)
-  return processed
-  pass
-
-
-
-
-def build_object(searchKey, priceText):
-  '''
-  Build the final object after analysing all the obtained
-  '''
-  itemObj = {}
-  itemObj["item"] = searchKey
-  processed = process_text(priceText)
-  for key, value in  processed.items():
-    itemObj[key] = value
-  return itemObj
-  pass
-
-
 def query_price(search):
   global result
   # Get a valid url
@@ -95,11 +40,10 @@ def query_price(search):
     # Get the per pound price of the item
     try:
       item_list = driver.find_elements_by_css_selector('span.price__value.selling-price-list__item__price.selling-price-list__item__price--now-price__value')
-    except Exception as e:
+    except:
       item_list = driver.find_elements_by_css_selector('span.price__value.comparison-price-list__item__price__value')
-      pass
-    itemObj = build_object(search, item_list[0].text)
-    # itemObj = {'item': search, 'price': item_list[0].text}
+    priceIt = item_list[0].text
+    itemObj = {'item': search, 'price': priceIt[1: len(priceIt)]}
     result.append(itemObj)
     # print(search + ',' + item_list[0].text) TODO Can be used to print the price
   except Exception as e:
@@ -125,6 +69,7 @@ def get_super_prices(items):
     query_threads.join()
   return result
 
-if __name__ == '__main__':
-  itemList = ["Apple","mango","carrot","grapes","banana"]
-  print(get_super_prices(itemList))
+# if __name__ == '__main__':
+#   itemList = ["Apple","mango","carrot","grapes","banana", "milk", "eggs", "ketchup"]
+#   print(get_super_prices(itemList))
+#   print(len(itemList))
