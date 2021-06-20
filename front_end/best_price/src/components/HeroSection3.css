@@ -1,7 +1,7 @@
 .hero-container3{
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-    height: 60vh;
+    /*padding-top: 10rem;*/
+    
+    height: 80vh !important;
     width: 100%;
   background: white;
   background-position: center;

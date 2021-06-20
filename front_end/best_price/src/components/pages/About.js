@@ -9,7 +9,6 @@ export default function About() {
         <>
         <HS_list />
         <HS_Price />
-        <Footer />
         </>
 
     )

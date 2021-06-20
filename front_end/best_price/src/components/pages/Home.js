@@ -28,8 +28,8 @@ function Home () {
             {/*<img src={"./images/Geo.jpg"} />*/}
                 {/*<Button className='btn' buttonStyle='btn--outline' buttonSize='btn--large'>
                 Learn More</Button>*/}
-                <button type="button" onClick={handleClick}>
-            Scroll Into View
+                <button className = "btn" type="button" onClick={handleClick}>
+            Learn More
           </button>
                 </div>
         {/*<div className='check'>
@@ -43,7 +43,6 @@ function Home () {
             <p>o8fuiy,djgcvhṅu,fydmtsnhfxcv bnjtdhmfxvc nbmgyfrmutdnsrgfzxcgvhbgjuyftdrsgedafz</p>
             </div>
         <HeroSection3 />
-        <Footer />
         </>
 
     )
